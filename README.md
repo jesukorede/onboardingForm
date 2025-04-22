@@ -94,4 +94,3 @@ Feel free to submit issues and enhancement requests.
 This project is licensed under the MIT License.
 ```
 
-Would you like me to add any additional sections to the README?
