@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/YOUR_REPO_NAME/static/js/main.fb7a0be7.js",
-    "index.html": "/YOUR_REPO_NAME/index.html",
-    "main.fb7a0be7.js.map": "/YOUR_REPO_NAME/static/js/main.fb7a0be7.js.map"
+    "main.js": "/onboardingForm/static/js/main.faacc500.js",
+    "index.html": "/onboardingForm/index.html",
+    "main.faacc500.js.map": "/onboardingForm/static/js/main.faacc500.js.map"
   },
   "entrypoints": [
-    "static/js/main.fb7a0be7.js"
+    "static/js/main.faacc500.js"
   ]
 }
