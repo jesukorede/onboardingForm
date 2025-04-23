@@ -8,6 +8,16 @@ const ToolGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Adjust for tablets */
+    gap: 0.75rem; /* Reduce spacing */
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr; /* Single column for smaller devices */
+    gap: 0.5rem; /* Further reduce spacing */
+  }
 `;
 
 const ToolItem = styled.div`
@@ -19,24 +29,40 @@ const ToolItem = styled.div`
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.3s ease;
-  background: ${props => props.selected ? 'var(--primary-light)' : 'white'};
-  border-color: ${props => props.selected ? 'var(--primary)' : '#ddd'};
+  background: ${props => (props.selected ? 'var(--primary-light)' : 'white')};
+  border-color: ${props => (props.selected ? 'var(--primary)' : '#ddd')};
 
   &:hover {
     border-color: var(--primary);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.75rem; /* Adjust padding for small devices */
   }
 `;
 
 const Icon = styled.span`
   font-size: 2rem;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 576px) {
+    font-size: 1.5rem; /* Scale icon size for smaller devices */
+  }
 `;
 
 const Note = styled.p`
   font-size: 0.9rem;
   color: #666;
   margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem; /* Adjust font size for tablets */
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.8rem; /* Further adjustment for small screens */
+  }
 `;
 
 const ToolStackStep = () => {

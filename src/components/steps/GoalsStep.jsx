@@ -7,6 +7,14 @@ const CheckboxGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  @media (max-width: 768px) {
+    gap: 0.5rem; /* Reduce spacing for smaller screens */
+  }
+
+  @media (max-width: 576px) {
+    gap: 0.4rem;
+  }
 `;
 
 const CheckboxItem = styled.label`
@@ -21,6 +29,33 @@ const CheckboxItem = styled.label`
 
   &:hover {
     background-color: var(--light);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem; /* Adjust font size for readability */
+    gap: 0.4rem; /* Reduce gap for smaller screens */
+    padding: 0.4rem; /* Adjust padding */
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.85rem;
+    gap: 0.3rem;
+    padding: 0.3rem;
+  }
+`;
+
+const ResponsiveText = styled.p`
+  font-size: 1rem;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 `;
 
@@ -46,7 +81,9 @@ const GoalsStep = () => {
   return (
     <Step active={currentStep === 4}>
       <h2>What Do You Want to Track or Improve?</h2>
-      <p>This helps us personalize your dashboard and features.</p>
+      <ResponsiveText>
+        This helps us personalize your dashboard and features.
+      </ResponsiveText>
 
       <FormGroup>
         <Label>Select your goals</Label>

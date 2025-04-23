@@ -11,13 +11,23 @@ import CompletionStep from './components/steps/CompletionStep';
 import CompletionPopup from './components/CompletionPopup';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const ResponsiveContainer = styled.div`
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+
+  @media (max-width: 768px) {
+    padding: 1.5rem; /* Adjust padding for tablets */
+    margin: 1.5rem auto; /* Reduce margin for medium screens */
+  }
+
+  @media (max-width: 576px) {
+    padding: 1rem; /* Compact padding for mobile screens */
+    margin: 1rem auto; /* Reduce margin for small screens */
+  }
 `;
 
 function App() {
@@ -25,14 +35,13 @@ function App() {
 
   const handlePopupClose = () => {
     setShowPopup(false);
-    // In a real app, this would redirect to dashboard
     console.log('Redirecting to dashboard...');
   };
 
   return (
     <OnboardingProvider>
       <GlobalStyles />
-      <Container>
+      <ResponsiveContainer>
         <ProgressBar />
         <WelcomeStep />
         <AboutStep />
@@ -40,7 +49,7 @@ function App() {
         <ToolStackStep />
         <GoalsStep />
         <CompletionStep />
-      </Container>
+      </ResponsiveContainer>
       <CompletionPopup show={showPopup} onClose={handlePopupClose} />
     </OnboardingProvider>
   );

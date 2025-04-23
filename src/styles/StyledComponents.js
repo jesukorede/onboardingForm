@@ -12,23 +12,44 @@ export const Container = styled.div`
   background: white;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 1rem;
+  }
 `;
 
 export const Step = styled.div`
-  display: ${props => props.active ? 'flex' : 'none'};
+  display: ${props => (props.active ? 'flex' : 'none')};
   animation: ${fadeIn} 0.5s ease;
   min-height: 450px;
   flex-direction: column;
+
+  @media (max-width: 576px) {
+    min-height: 350px;
+  }
 `;
 
 export const FormGroup = styled.div`
   margin-bottom: 1.5rem;
+
+  @media (max-width: 576px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ErrorMessage = styled.span`
@@ -36,14 +57,18 @@ export const ErrorMessage = styled.span`
   font-size: 0.8rem;
   margin-top: 0.25rem;
   display: block;
+
+  @media (max-width: 576px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const Button = styled.button`
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: ${props => props.secondary ? 'white' : 'var(--primary)'};
-  color: ${props => props.secondary ? 'var(--primary)' : 'white'};
-  border: ${props => props.secondary ? '1px solid var(--primary)' : 'none'};
+  background-color: ${props => (props.secondary ? 'white' : 'var(--primary)')};
+  color: ${props => (props.secondary ? 'var(--primary)' : 'white')};
+  border: ${props => (props.secondary ? '1px solid var(--primary)' : 'none')};
   border-radius: var(--border-radius);
   font-size: 1rem;
   font-weight: 600;
@@ -51,8 +76,18 @@ export const Button = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${props => props.secondary ? 'var(--light)' : 'var(--primary-light)'};
+    background-color: ${props => (props.secondary ? 'var(--light)' : 'var(--primary-light)')};
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
   }
 `;
 
@@ -61,4 +96,9 @@ export const ButtonGroup = styled.div`
   gap: 1rem;
   margin-top: auto;
   padding-top: 2rem;
+
+  @media (max-width: 576px) {
+    gap: 0.5rem;
+    padding-top: 1rem;
+  }
 `;

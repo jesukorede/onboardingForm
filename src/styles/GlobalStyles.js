@@ -25,5 +25,96 @@ export const GlobalStyles = createGlobalStyle`
     background-color: var(--light);
     color: var(--dark);
     line-height: 1.6;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for responsiveness */
+  }
+
+  /* Global Container for Responsiveness */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Ensure proper padding */
+  }
+
+  /* Default Heading Styles */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+  }
+
+  /* Responsive Typography */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    h1 {
+      font-size: 1.75rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .container {
+      padding: 0 0.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 1.25rem;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 0.9rem;
+    }
+    p {
+      font-size: 0.75rem;
+    }
   }
 `;

@@ -7,6 +7,10 @@ const RadioGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  @media (max-width: 576px) {
+    gap: 0.5rem; /* Reduce spacing for smaller devices */
+  }
 `;
 
 const CheckboxGroup = styled(RadioGroup)``;
@@ -17,6 +21,11 @@ const RadioItem = styled.label`
   gap: 0.5rem;
   font-weight: normal;
   cursor: pointer;
+
+  @media (max-width: 576px) {
+    font-size: 0.9rem; /* Adjust font size for readability */
+    gap: 0.4rem;
+  }
 `;
 
 const OtherInput = styled.input`
@@ -25,7 +34,11 @@ const OtherInput = styled.input`
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
   margin-top: 0.5rem;
-  display: ${props => props.show ? 'block' : 'none'};
+  display: ${props => (props.show ? 'block' : 'none')};
+
+  @media (max-width: 576px) {
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
 `;
 
 const AboutStep = () => {
@@ -34,7 +47,7 @@ const AboutStep = () => {
   const handleRoleChange = (e) => {
     setFormData(prev => ({
       ...prev,
-      role: e.target.value
+      role: e.target.value,
     }));
   };
 
@@ -44,14 +57,14 @@ const AboutStep = () => {
       ...prev,
       work: checked 
         ? [...prev.work, value]
-        : prev.work.filter(item => item !== value)
+        : prev.work.filter(item => item !== value),
     }));
   };
 
   const handleOtherWorkChange = (e) => {
     setFormData(prev => ({
       ...prev,
-      workOther: e.target.value
+      workOther: e.target.value,
     }));
   };
 
